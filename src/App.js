@@ -1,8 +1,18 @@
+// import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import { getListItems } from './services/items.js';
+import Auth from './components/Auth/Auth.js';
+// import Header from './components/Header/Header.js';
 
 function App() {
-  return <div className="App">{getListItems()}</div>;
+  return (
+    <div className="App">
+      {/* <Header /> */}
+      <Auth />
+      {/* <Switch>
+        <Route path="/auth/:type" component={Auth} />
+      </Switch> */}
+    </div>
+  );
 }
 
 export default App;
