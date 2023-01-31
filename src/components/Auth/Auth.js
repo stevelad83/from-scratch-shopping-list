@@ -1,7 +1,7 @@
 import React from 'react';
-import { useContext } from 'react';
-import { useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { useContext, useState } from 'react';
+
+import { NavLink, Redirect, useParams } from 'react-router-dom';
 import { authUser } from '../../services/auth.js';
 import { UserContext } from '../../context/UserContext.js';
 
@@ -10,6 +10,10 @@ export default function Auth() {
   const [password, setPassword] = useState('');
   const { type } = useParams();
   const { user, setUser } = useContext(UserContext);
+
+  if (user) {
+    return <Redirect to="/tasks" />;
+  }
 
   const submitAuth = async (e) => {
     e.preventDefault();
@@ -30,7 +34,7 @@ export default function Auth() {
         <label>Email</label>
         <input
           type="email"
-          placeholder="name@example,com"
+          placeholder="name@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
