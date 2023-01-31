@@ -20,4 +20,3 @@ export async function authUser(email, password, type) {
 export async function signOut() {
   await client.auth.signOut();
 }
-//sign-out
