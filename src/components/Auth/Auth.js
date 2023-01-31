@@ -20,7 +20,7 @@ export default function Auth() {
     try {
       const newUser = await authUser(email, password, type);
       setUser(newUser);
-      console.log('user', user);
+      //   console.log('user', user);
     } catch (e) {
       console.error(e);
     }
