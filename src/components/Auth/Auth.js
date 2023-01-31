@@ -1,15 +1,15 @@
 import React from 'react';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import { NavLink, Redirect, useParams } from 'react-router-dom';
 import { authUser } from '../../services/auth.js';
-import { UserContext } from '../../context/UserContext.js';
+import { useUser } from '../../context/UserContext.js';
 
 export default function Auth() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { type } = useParams();
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useUser();
 
   if (user) {
     return <Redirect to="/tasks" />;

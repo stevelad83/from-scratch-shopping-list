@@ -1,10 +1,10 @@
 import React from 'react';
-import { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
-import { UserContext } from '../context/UserContext.js';
+import { useUser } from '../context/UserContext.js';
 
 export default function Tasks() {
-  const user = useContext(UserContext);
+  const { user } = useUser();
+  console.log('user', user);
   if (!user) {
     return <Redirect to="/auth/sign-in" />;
   }
