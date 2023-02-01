@@ -5,3 +5,5 @@ export async function getListItems() {
   console.log('response.data', response.data);
   return checkError(response);
 }
+
+getListItems();

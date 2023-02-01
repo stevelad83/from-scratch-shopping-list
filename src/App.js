@@ -4,6 +4,7 @@ import Auth from './components/Auth/Auth.js';
 import { useUser } from './context/UserContext.js';
 import Tasks from './components/Tasks.js';
 import Header from './components/Header/Header.js';
+import TaskList from './components/TaskList.js';
 
 function App() {
   const { user } = useUser();

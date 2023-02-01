@@ -1,12 +1,18 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useUser } from '../context/UserContext.js';
+import TaskList from './TaskList.js';
 
 export default function Tasks() {
   const { user } = useUser();
-  console.log('user', user);
+  // console.log('user', user);
   if (!user) {
     return <Redirect to="/auth/sign-in" />;
   }
-  return <div>Tasks</div>;
+  return (
+    <div>
+      <p>Tasks go here!</p>
+      <TaskList />
+    </div>
+  );
 }

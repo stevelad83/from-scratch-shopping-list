@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <header>
-      <h1>I am header!</h1>
+      <h1>DO THESE TASKS RIGHT NOW!</h1>
 
       {user && (
         <nav>
