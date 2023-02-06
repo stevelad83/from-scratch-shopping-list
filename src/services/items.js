@@ -8,5 +8,6 @@ export async function getListItems() {
 
 export async function createTask(item) {
   const response = await client.from('groceries').insert({ item }).single();
+  console.log('response.data', response.data);
   return checkError(response);
 }

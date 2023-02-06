@@ -1,10 +1,9 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { TasksContext } from '../context/TasksContext.js';
 
 export default function TaskList() {
   const { tasks } = useContext(TasksContext);
-  console.log('tasks', tasks);
+
   return (
     <div>
       {tasks.map((task) => (
